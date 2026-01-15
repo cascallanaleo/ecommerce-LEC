@@ -1,0 +1,25 @@
+
+.ActualizaCarrito {
+  display: flex;
+  justify-content: center;   
+  align-items: center;        
+  gap: 20px;                  
+  padding: 20px;     
+  color: azure;         
+}
+
+.ActualizaCarrito-button {
+  padding: 10px 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #2b2828;
+  color: #e5f322;
+}
+
+.ActualizaCarrito-button:hover {
+  background-color: #3a3737;
+  transform: translateY(-2px);
+}

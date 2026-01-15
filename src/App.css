@@ -1,0 +1,9 @@
+body {
+  font-family: system-ui;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+
+  background-color: #292C3E;;
+  color: rgb(219, 219, 219);
+}
