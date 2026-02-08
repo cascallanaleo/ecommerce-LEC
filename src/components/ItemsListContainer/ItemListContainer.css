@@ -1,5 +1,8 @@
-.ItemListContainer-h3 {
-    width: 100%;
-    text-align: center;
-    color :antiquewhite;
+.item-list-container {
+  padding: 20px;
+}
+
+.item-list-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
 }

@@ -2,8 +2,10 @@
     display: flex;
     height: 7rem;
     align-items: center;
+    justify-content: space-between;
     padding: 10px 20px;
     background-color: #2b2828;
+    gap: 20px;
 }
 
 .nav-logo {
@@ -12,22 +14,33 @@
 }
 
 .nav-list {
-    flex: 1 1 auto;
     display: flex;
     list-style: none;
-    justify-content: center;  /* centra los <li> dentro del ul */
-    gap: 20px;
+    gap: 60px;
     margin: 0;
     padding: 0;
+    flex: 1;
+    justify-content: center;
+}
+
+.NavItem {
     font-weight: bold;
+    font-size: 2rem;
     cursor: pointer;
     color: #e5f322;
+    
+    text-decoration: none;
 }
 
 
-.nav-list li:hover {
+.nav-list .NavItem:hover {
     color: #98d355;
     transform: translateY(-2px);
+}
+
+.nav-list .NavItem.active {
+    color: #98d355;
+    text-decoration: underline;
 }
 
 
