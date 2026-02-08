@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
 import NavBar from './components/NavBar/NavBar';
-import ActualizaCarrito from './components/ActualizaCarrito/ActualizaCarrito';
-import ItemListContainer from './components/ItemsListContainer/ItemListContainer';
+import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
 import { BrowserRouter, Route, Routes } from 'react-router';
 
 
@@ -22,11 +22,9 @@ function App() {
 
       <Routes>
         <Route path="/" element={<ItemListContainer greeting={"Bienvenidos a LEC Equipamientos Comerciales"} />} />
-        <Route path="/categorias/:categoria" element={<ItemListContainer saludo={"Bienvenidos a LEC Equipamientos Comerciales"} />} />
-        {/* <Route path="/detail/:productId" element={<ItemDetailContainer />} /> */}
+        <Route path="/categorias/:categoria" element={<ItemListContainer greeting={"Bienvenidos a LEC Equipamientos Comerciales"} />} />
+        <Route path="/itemdetail/:productId" element={<ItemDetailContainer actualizarCarrito={actualizarCarrito} />} />
         <Route path="*" element={<div>404 not found</div>} />
-
-        {/* <ActualizaCarrito actualizarCarrito={actualizarCarrito} /> */}
       </Routes>
     </BrowserRouter>
   )

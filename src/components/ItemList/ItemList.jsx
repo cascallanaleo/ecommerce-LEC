@@ -4,9 +4,10 @@ import "./itemList.css";
 const ItemList = ({ products }) => {
   return (
     <ul className="item-list">
-      {products.map((product) => (
+      { products.length === 0 ? <div>No hay productos para mostrar</div> :
+      products.map((product) => (
         <Item key={product.id} product={product} />
-      ))}
+      )) }
     </ul>
   )
 }

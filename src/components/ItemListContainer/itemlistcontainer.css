@@ -1,0 +1,10 @@
+.itemlistcontainer{
+  padding: 0 20px;
+}
+
+.itemlistcontainer h2{
+  text-align: center;
+  margin: 1.25rem 0 1rem;
+  font-size: 1.5rem;
+  color: azure;
+}

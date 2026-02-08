@@ -1,30 +1,101 @@
 .itemdetail{
+  --card-bg: #ffffff;
+  --muted: #6b7280;
+  --accent: #0ea5a4;
+  --accent-2: #10b981;
+
+  max-width: 1100px;
+  margin: 2rem auto;
   display: flex;
-  justify-content: center;
+  gap: 2rem;
+  align-items: center;
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(16,24,40,0.06);
 }
 
 .img-container-itemdetail{
-  width: 50%;
+  flex: 1 1 45%;
+  max-width: 520px;
+  overflow: hidden;
+  border-radius: 10px;
 }
 
 .img-itemdetail{
-  width: 100% ;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 4 / 3;
+  transition: transform .25s ease;
 }
 
+.img-itemdetail:hover{transform: scale(1.02)}
+
 .text-itemdetail{
-  width: 50%;
+  flex: 1 1 50%;
 }
 
 .title-itemdetail{
-  font-size: 50px;
-  font-weight: bold;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 0.5rem 0;
+  color: #111827;
 }
 
 .description-itemdetail{
-  font-size: 20px;
-  font-weight: 100;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--muted);
+  margin: 0 0 1rem 0;
 }
 
 .price-itemdetail{
-  font-size: 25px;
+  font-size: 1rem;
+  color: #374151;
+  margin-bottom: 1rem;
+}
+
+.price-value{
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: var(--accent-2);
+  margin-left: 0.5rem;
+}
+
+.actions-itemdetail{
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.btn{
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease;
+}
+
+.btn:active{transform: translateY(1px)}
+
+.btn-primary{
+  background: linear-gradient(90deg,var(--accent),var(--accent-2));
+  color: white;
+  box-shadow: 0 6px 12px rgba(16,185,129,0.12);
+}
+
+.btn-secondary{
+  background: transparent;
+  color: #111827;
+  border: 1px solid #e5e7eb;
+}
+
+@media (max-width: 760px){
+  .itemdetail{flex-direction: column; padding: 1rem}
+  .img-container-itemdetail{width:100%; max-width:100%}
+  .text-itemdetail{width:100%}
+  .title-itemdetail{font-size:1.35rem}
 }

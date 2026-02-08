@@ -9,8 +9,8 @@ const Item = ({ product }) => {
       </div>
       <div className="text-item">
         <p className="title-item">{product.name}</p>
-        <p className="price-item">${product.price.toLocaleString('es-AR')}</p>
-        <Link to={`/detail/${product.id}`} className="button-item">Ver Detalle - Comprar</Link>
+        <p className="price-item">$ {product.price.toLocaleString('es-AR')}</p>
+        <Link to={`/ItemDetail/${product.id}`} className="button-item">Ver Detalle - Comprar</Link>
       </div>
     </li>
   )
