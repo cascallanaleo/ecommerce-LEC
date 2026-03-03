@@ -1,15 +1,18 @@
-import { useState } from "react";
 import { BsCart2 } from "react-icons/bs";
 import "./CartWidget.css"
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
+import { Link } from "react-router";
 
-function CartWidget({contadorCarrito}) {
+
+const CartWidget = () => {
+  const { totalQuantity } = useContext(CartContext);
+  const quantity = totalQuantity();
   return (
-    <div className="CartWidget">
-
-      <BsCart2 size={30} />
-      <p className="Cart-cantidad">{contadorCarrito}</p>
-      
-    </div>
+    <Link to = "/cart" className="cartwidget">
+      < BsCart2 size = { 30} />
+      { quantity > 0 && <p className="cart-cantidad">{quantity}</p>}
+    </Link>
   )
 }
 

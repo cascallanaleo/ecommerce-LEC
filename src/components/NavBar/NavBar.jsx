@@ -1,10 +1,9 @@
 import CartWidget from "../CartWidget/CartWidget"
-import ItemListContainer from "../ActualizaCarrito/ActualizaCarrito"
 import "./NavBar.css"
 import logo from "../../img/logo.png"
 import { Link, NavLink } from "react-router"
 
-function NavBar({contadorCarrito}) {
+function NavBar() {
     return (
         <nav className="nav">
             <Link to='/'>
@@ -19,7 +18,7 @@ function NavBar({contadorCarrito}) {
             </ul>
 
             <div className="nav-cart">
-                <CartWidget contadorCarrito={contadorCarrito}/>
+                <CartWidget/>
             </div>
 
         </nav>

@@ -1,7 +1,18 @@
 import "./itemdetail.css";
-import ActualizaCarrito from "../ActualizaCarrito/ActualizaCarrito";
+import ItemCount from "../ItemCount/ItemCount";
+import "./ItemDetail.css";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ({ product, actualizarCarrito }) => {
+
+
+const ItemDetail = ({ product }) => {
+  const { addProduct } = useContext(CartContext);
+
+  const addToCart = (count) => {
+    const newProduct = { ...product, quantity: count }
+    addProduct(newProduct);
+  }
   return (
     <div className="itemdetail">
       <div className="img-container-itemdetail">
@@ -13,10 +24,10 @@ const ItemDetail = ({ product, actualizarCarrito }) => {
         <p className="description-itemdetail">{product.description}</p>
 
         <div className="price-itemdetail">
-         Precio: <span className="price-value">$ {product.price.toLocaleString('es-AR')} </span>
+          Precio: <span className="price-value">$ {product.price.toLocaleString('es-AR')} </span>
         </div>
 
-        <ActualizaCarrito actualizarCarrito={actualizarCarrito} />
+        <ItemCount addToCart={addToCart} product={product} />
       </div>
     </div>
   );

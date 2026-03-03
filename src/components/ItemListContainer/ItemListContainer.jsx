@@ -1,7 +1,8 @@
-import { getProducts } from "../../data/data.js";
 import { useState, useEffect } from "react";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router";
+import db from "../../db/db.js"
+import { collection, getDocs, query, where } from "firebase/firestore";  
 import "./itemlistcontainer.css";
 
 const ItemListContainer = ({ greeting }) => {
@@ -9,25 +10,25 @@ const ItemListContainer = ({ greeting }) => {
   const [loading, setLoading] = useState(true);
   const { categoria } = useParams();
 
+  const getProducts = async () => {
+    try {
+      const productRef = collection(db, "products");
+      const q = categoria ? query(productRef, where("category", "==", categoria)) : productRef;  
+      const dataDb = await getDocs(q);
+      const  data = dataDb.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setProducts(data);
+    }
+     catch (error) {
+      console.log("Error al obtener los productos:", error);
+    }
+      finally {
+        setLoading(false);
+      }
+  }
+
   useEffect(() => {
     setLoading(true);
-
-    getProducts()
-      .then((response) => {
-        if(categoria){
-          const filteredProducts = response.filter( (product) => product.category === categoria );
-          setProducts(filteredProducts);
-        }else{
-          setProducts(response);
-        }
-      })
-      .catch((error)=> {
-        console.log(error);
-      })
-      .finally(()=> {
-        setLoading(false);
-      });
-
+    getProducts();
   }, [categoria]);
 
   return (
