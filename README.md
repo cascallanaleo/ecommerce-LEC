@@ -18,8 +18,8 @@ Un proyecto de tienda en línea (e-commerce) desarrollado con React. Los usuario
 
 1. Clonar el proyecto
    ```bash
-   git clone <url>
-   cd react-lec
+   git clone https://github.com/cascallanaleo/ecommerce-LEC.git
+   cd ecommerce-LEC
    ```
 
 2. Instalar dependencias
